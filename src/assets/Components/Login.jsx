@@ -7,7 +7,7 @@ const Login = () => {
     password: "",
   });
 
-  const handleChange = async (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setInput((prevData) => ({
       ...prevData,
@@ -18,43 +18,53 @@ const Login = () => {
   const handleLogin = () => {
     console.log(input.email, input.password);
   };
+
   return (
-    <div>
-      <h1 className="text-center text-2xl p-5">
-        TubeIndia<sub>.in</sub>
-      </h1>
-      <div className="border rounded-2xl text-center text-2xl p-2 mx-96">
-        <div className="mx-5">
-          <h1 className="text-left text-3xl font-bold">Sign in</h1>
-          <h1 className="my-5">Enter your Email or Mobile Number</h1>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-6 space-y-6 border border-gray-300">
+
+        <h1 className="text-center text-3xl font-bold text-blue-600">
+          TubeIndia<sub className="text-sm">.in</sub>
+        </h1>
+
+        <div className="space-y-4">
+          <h1 className="text-2xl font-bold">Sign in</h1>
+          <p className="text-gray-600">Enter your Email or Mobile Number</p>
+
           <input
-            className="border w-full text-center p-2 rounded-2xl"
+            className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             onChange={handleChange}
             value={input.email}
             type="text"
             placeholder="Email or Mobile"
             name="email"
           />
-          <h1 className="my-5">Enter your Password</h1>
+
+          <p className="mt-2 text-gray-600">Enter your Password</p>
+
           <input
-            className="border text-center p-2 w-full rounded-2xl"
+            className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="password"
             placeholder="Password"
             onChange={handleChange}
             value={input.password}
             name="password"
           />
+
           <button
             onClick={handleLogin}
-            className="font-bold bg-yellow-400 p-3 my-5 hover:bg-yellow-300 rounded-2xl"
+            className="w-full font-bold bg-yellow-500 p-3 rounded-lg hover:bg-yellow-400 transition duration-300"
           >
             Continue
           </button>
-
         </div>
-        <Link to="/forget">Forget Password</Link>
-        <hr/>
-            <Link to="/signup">Create your TubeIndia account</Link>
+
+        <div className="flex justify-between text-blue-600">
+          <Link to="/forget" className="hover:underline">Forgot Password?</Link>
+          <Link to="/signup" className="hover:underline">Create your TubeIndia account</Link>
+        </div>
+
+        <p className="text-center text-gray-500 text-xs">© 2025 TubeIndia.in - All rights reserved</p>
       </div>
     </div>
   );
