@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Bars } from 'react-loading-icons';
 import { useDispatch } from "react-redux";
 import { Addtocart } from "../Redux/AddCartSlice";
+import toast from "react-hot-toast";
 
 const HomePost = () => {
   const [data, setData] = useState([]);
@@ -11,6 +12,7 @@ const HomePost = () => {
   const handleCart = (item) => {
     dispatch(Addtocart(item))
     console.log("Added to Cart: ", item)
+    toast.success(`${item.title} added to cart!`)
   };
 
   useEffect(() => {
