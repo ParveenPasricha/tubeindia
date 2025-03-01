@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-const Return = () => {
+const Cart = () => {
   const cartItems = useSelector((state) => state.Cart.cartItem)
 
   const handleBuy = (item) => {
@@ -45,4 +45,4 @@ const Return = () => {
   )
 }
 
-export default Return
+export default Cart
