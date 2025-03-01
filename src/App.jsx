@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./assets/Components/Login";
 import Forget from "./assets/Components/Forget";
 import Admin from "./assets/Components/Admin";
+import Return from "./assets/Components/Return";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/login" element={<Login/>}/>
           <Route path="/forget" element={<Forget/>}/>
           <Route path="/admin" element={<Admin/>}/>
+          <Route path="/return&order" element={<Return/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment } from '../Redux/Store'
+import { decrement, increment } from '../Redux/Slice'  // ✅ named exports se actions import
+
 function Count(){
     
 //   const [count, setCount]= useState(0)
