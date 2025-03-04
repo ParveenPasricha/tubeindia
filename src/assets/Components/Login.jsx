@@ -1,7 +1,9 @@
+import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+    const navigate = useNavigate()
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -15,7 +17,23 @@ const Login = () => {
     }));
   };
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
+    if(!input.email || !input.password){
+      alert("Please Fill all Field")
+      return
+    }
+    try {
+      const response = await axios.post("http://localhost:5000/api/login",
+        {email: input.email, password: input.password} 
+      )
+      console.log("Login Successfull" , response.data)
+      alert("login Successfully")
+      navigate('/')
+
+    } catch (error) {
+      console.log(error)
+    }
+
     console.log(input.email, input.password);
   };
 

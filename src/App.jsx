@@ -10,6 +10,7 @@ import Forget from "./assets/Components/Forget";
 import Admin from "./assets/Components/Admin";
 import Cart from "./assets/Components/Cart";
 import { Toaster } from "react-hot-toast";
+import Signup from "./assets/Components/Signup";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/forget" element={<Forget/>}/>
           <Route path="/admin" element={<Admin/>}/>
           <Route path="/cart" element={<Cart/>}/>
+          <Route path="/signup" element={<Signup/>}/>
         </Routes>
       </BrowserRouter>
     </>
