@@ -11,6 +11,7 @@ import Admin from "./assets/Components/Admin";
 import Cart from "./assets/Components/Cart";
 import { Toaster } from "react-hot-toast";
 import Signup from "./assets/Components/Signup";
+import { useNavigate } from "react-router-dom";
 
 const App = () => {
   return (

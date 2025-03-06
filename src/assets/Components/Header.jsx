@@ -11,7 +11,7 @@ const Header = () => {
         </div>
         <button className="hover:bg-gray-800 px-3 py-1 rounded">Search</button>
         <Link to="/login" className="hover:bg-gray-800 px-3 py-1 rounded">
-          Hello, sign in
+          Login
         </Link>
         <Link to="/return&order" className="hover:bg-gray-800 px-3 py-1 rounded">
           Return & Order
