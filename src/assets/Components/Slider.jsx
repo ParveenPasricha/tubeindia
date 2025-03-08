@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { MdSkipNext } from "react-icons/md";
 
 const Slider = () => {
   const images = [
@@ -61,7 +62,7 @@ const Slider = () => {
         onClick={goToPrev}
         disabled={currentIndex === 0}
       >
-        Previous
+        <MdSkipNext className="rotate-180" />
       </button>
 
       {/* Next Button */}
@@ -70,7 +71,7 @@ const Slider = () => {
         onClick={goToNext}
         disabled={currentIndex === images.length - 1}
       >
-        Next
+       <MdSkipNext />
       </button>
     </div>
   );

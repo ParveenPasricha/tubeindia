@@ -1,8 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { login } from "../Redux/authSlice";
 
 const Login = () => {
+    const dispatch =  useDispatch()
     const navigate = useNavigate()
 
   const [input, setInput] = useState({
@@ -28,6 +31,13 @@ const Login = () => {
         {email: input.email, password: input.password} 
       )
       console.log("Login Successfull" , response.data)
+      if(response.data.user){
+        dispatch(login(response.data.user))
+        navigate('/')
+      }
+      else{
+        alert("Login nhi hua hai error hai kuch")
+      }
       alert("login Successfully")
       navigate('/')
 
