@@ -39,6 +39,8 @@ const Cart = () => {
           >
             Buy Now
           </button>
+          <button>-</button>
+          <button>+</button>
         </div>
       ))}
     </div>
